@@ -13,15 +13,13 @@ const page4 = () => {
   const statList: StatSummary[] = stats ? JSON.parse(stats) : [];
   return (
     <View style={styles.container}>
-      <h1>Match Summary</h1>
+      <Text>Match Summary</Text>
 
       <View style={styles.summary}>
         {statList.map((stat) => (
           <View key={stat.title} style={styles.detailCont}>
-            <Text>
-              <View style={styles.test}>{stat.title}</View>
-              <View>{stat.count}</View>
-            </Text>
+            <Text style={styles.test}>{stat.title}</Text>
+            <Text>{stat.count}</Text>
           </View>
         ))}
       </View>
