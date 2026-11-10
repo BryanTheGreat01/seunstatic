@@ -13,15 +13,15 @@ const page4 = () => {
   const statList: StatSummary[] = stats ? JSON.parse(stats) : [];
   return (
     <View style={styles.container}>
-      <h1>Match Summary</h1>
+      <Text style={styles.title}>Match Summary</Text>
 
       <View style={styles.summary}>
         {statList.map((stat) => (
           <View key={stat.title} style={styles.detailCont}>
-            <Text>
-              <View style={styles.test}>{stat.title}</View>
-              <View>{stat.count}</View>
-            </Text>
+            <View style={styles.detail}>
+              <Text>{stat.title}</Text>
+              <Text>{stat.count}</Text>
+            </View>
           </View>
         ))}
       </View>
@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     backgroundColor: "#afc0d8",
+  },
+
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 10,
   },
 
   summary: {
@@ -56,8 +62,10 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3,
     justifyContent: "space-between",
   },
-  test: {
-    marginLeft: 4,
-    width: "90%",
+  detail: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: 10,
+    marginRight: 10,
   },
 });
